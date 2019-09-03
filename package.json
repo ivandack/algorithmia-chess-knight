@@ -1,0 +1,15 @@
+{
+  "name": "algorithmia-chess-knight",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.extranet.fluxit.com.ar:nearshore/algorithmia-chess-knight.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
