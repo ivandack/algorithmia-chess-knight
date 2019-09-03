@@ -10,10 +10,10 @@
 const BOARD_SIZE = 3;
 const AVAILABLE_MOVES = [[2,1], [2,-1], [-2,1], [-2, -1], [1,2], [1,-2], [-1,2], [-1,-2]];
 
-function initializeMatrix(matrix, n) {
-  for (let i = 0; i < n; i++) {
+function initializeMatrix(matrix) {
+  for (let i = 0; i < BOARD_SIZE; i++) {
     matrix[i] = [];
-    for (let j = 0; j < n; j++) {
+    for (let j = 0; j < BOARD_SIZE; j++) {
       matrix[i][j] = 0;
     }
   }
@@ -49,3 +49,8 @@ function main(r, c, k) {
   }
 
 }
+
+module.exports = {
+  algorithm: main,
+  BOARD_SIZE
+};
