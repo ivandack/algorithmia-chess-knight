@@ -15,7 +15,7 @@ describe('Chess knight movement', () => {
     });
 
     it('should get 0 for k=1 and initial (1, 1)', () => {
-      const result = algorithm(1, 1, 0);
+      const result = algorithm(1, 1, 1);
       expect(result, `Expected 0 from (1, 1)`).to.equal(0);
     })
   });
