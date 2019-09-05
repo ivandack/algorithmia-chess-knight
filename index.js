@@ -37,6 +37,14 @@ function addCoord(coord1, coord2) {
 }
 
 function main(r, c, k) {
+  // Validations
+  if (!isInBoard(r, c)) {
+    return 0;
+  }
+  if (k < 0) {
+    throw new Error(`Value of k can't be negative. Was k=${k}`);
+  }
+
   // Step 1 and 2
   let a1 = [];
   let a2 = [];
@@ -68,6 +76,7 @@ function main(r, c, k) {
     // console.log(a2);
   }
 
+  // Step 4
   let sum = 0;
   for (let x = 0; x < BOARD_SIZE; x++) {
     for (let y = 0; y < BOARD_SIZE; y++) {
