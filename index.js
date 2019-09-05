@@ -19,6 +19,11 @@ const AVAILABLE_MOVES = [
   [-1, -2]
 ];
 
+/**
+ * Initialices the matrix array in 0 with size BOARD_SIZE x BOARD_SIZE.
+ *
+ * @param {array} matrix
+ */
 function initializeMatrix(matrix) {
   for (let i = 0; i < BOARD_SIZE; i++) {
     matrix[i] = [];
@@ -28,14 +33,34 @@ function initializeMatrix(matrix) {
   }
 }
 
+/**
+ * Returns "true" if the coordinates fall inside the board. "false" otherwise.
+ *
+ * @param {int} x x coordinate.
+ * @param {int} y y coordinate.
+ */
 function isInBoard(x, y) {
   return x >= 0 && x < BOARD_SIZE && (y >= 0 && y < BOARD_SIZE);
 }
 
+/**
+ * Adds the pseudo-tuple (array of 2) "coord1 + coord2".
+ *
+ * @param {array} coord1 array representing the coordinates (coord1[0], coord1[1]).
+ * @param {array} coord2 array representing the coordinates (coord2[0], coord2[1])
+ */
 function addCoord(coord1, coord2) {
   return [coord1[0] + coord2[0], coord1[1] + coord2[1]];
 }
 
+/**
+ * Returns the probability (float) of a chess knight in the square (r, c) of
+ * the BOARD_SIZE sized board will remain on said board after k movements.
+ *
+ * @param {int} r x of the knight's initial coordinates (x, y).
+ * @param {int} c y of the knight's initial coordinates (x, y).
+ * @param {int} k number of movements to simulate. Should be 0 or posirive.
+ */
 function main(r, c, k) {
   // Validations
   if (!isInBoard(r, c)) {
