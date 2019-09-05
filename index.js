@@ -36,10 +36,11 @@ function initializeMatrix(matrix) {
 /**
  * Returns "true" if the coordinates fall inside the board. "false" otherwise.
  *
- * @param {int} x x coordinate.
- * @param {int} y y coordinate.
+ * @param {array} coord array with [x, y].
  */
-function isInBoard(x, y) {
+function isInBoard(coord) {
+  const x = coord[0];
+  const y = coord[1];
   return x >= 0 && x < BOARD_SIZE && (y >= 0 && y < BOARD_SIZE);
 }
 
@@ -63,7 +64,7 @@ function addCoord(coord1, coord2) {
  */
 function main(r, c, k) {
   // Validations
-  if (!isInBoard(r, c)) {
+  if (!isInBoard([r, c])) {
     return 0;
   }
   if (k < 0) {
@@ -84,7 +85,7 @@ function main(r, c, k) {
         if (a1[x][y] > 0) {
           // console.log(`k=${i} - Calculate from ${x}, ${y}`);
           let validMoves = AVAILABLE_MOVES.map(m => addCoord([x, y], m)).filter(
-            c => isInBoard(c[0], c[1])
+            c => isInBoard(c)
           );
           // console.log(`r=${x} c=${y} k=${i} - Valid moves: ${validMoves.length}`);
           validMoves.forEach(m => {
