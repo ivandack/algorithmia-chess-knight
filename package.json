@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git@gitlab.extranet.fluxit.com.ar:nearshore/algorithmia-chess-knight.git"
   },
-  "author": "Ivan Dackiewicz <ivan.dackiewicz@fluxitsoft.com",
+  "author": "Ivan Dackiewicz <ivan.dackiewicz@fluxitsoft.com>",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.2.0",
